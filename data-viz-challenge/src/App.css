@@ -1,6 +1,9 @@
-/* -------------------------------------------------------------
-   Main Layout & Header
-------------------------------------------------------------- */
+/* =============================================================
+   DATA 150 Unified Visualization System: Andrew & Johnny
+   Compliant with Evergreen Data Visualization Checklist (2016)
+============================================================= */
+
+/* ----------------- Layout & Base ----------------- */
 .app-container {
   min-height: 100vh;
   display: flex;
@@ -15,13 +18,13 @@
   top: 0;
   z-index: 50;
   backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.96);
 }
 
 .nav-content {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 1rem 1.5rem;
+  padding: 0.85rem 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -30,7 +33,7 @@
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
 }
 
 .unc-logo-badge {
@@ -82,9 +85,7 @@
   background-color: var(--carolina-blue);
 }
 
-/* -------------------------------------------------------------
-   Hero Banner & KPIs
-------------------------------------------------------------- */
+/* ----------------- Hero Banner ----------------- */
 .hero-banner {
   background: linear-gradient(135deg, var(--navy) 0%, #1E3A8A 100%);
   color: #FFFFFF;
@@ -115,16 +116,17 @@
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: 0.5rem;
-  max-width: 800px;
+  max-width: 850px;
 }
 
 .hero-desc {
   font-size: 1.05rem;
   color: #E2E8F0;
-  max-width: 750px;
+  max-width: 800px;
   line-height: 1.6;
 }
 
+/* ----------------- Hero KPI Cards ----------------- */
 .kpi-grid {
   max-width: 1300px;
   margin: -2rem auto 2rem;
@@ -195,14 +197,9 @@
 .kpi-subtext {
   font-size: 0.8rem;
   color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
 }
 
-/* -------------------------------------------------------------
-   Navigation Tabs
-------------------------------------------------------------- */
+/* ----------------- Navigation Tabs ----------------- */
 .main-content {
   max-width: 1300px;
   margin: 0 auto;
@@ -223,9 +220,9 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 1.15rem;
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 600;
   color: var(--text-muted);
   background: transparent;
@@ -245,9 +242,223 @@
   background: #FFFFFF;
 }
 
-/* -------------------------------------------------------------
-   Dashboard Grid & Cards
-------------------------------------------------------------- */
+/* ----------------- Johnny's Evergreen Checklist Styles ----------------- */
+.checklist-story-wrapper {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 2rem;
+}
+
+.checklist-story-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.kicker {
+  color: #4F4F4F;
+  font-size: 0.95rem;
+  margin-bottom: 0.35rem;
+  font-weight: 500;
+}
+
+.checklist-story-header h2 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+
+.chart {
+  margin: 0 0 2.75rem;
+}
+
+.chart h2,
+.chart h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.25rem;
+  text-align: left;
+}
+
+.subtitle {
+  color: #4F4F4F;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+.chart-body {
+  margin-top: 1rem;
+}
+
+.axis-head,
+.row,
+.x-axis-row {
+  display: grid;
+  grid-template-columns: 14rem minmax(0, 1fr);
+  column-gap: 0.85rem;
+}
+
+.y-axis-label,
+.x-axis-label {
+  color: #4F4F4F;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.y-axis-label {
+  margin-bottom: 0.45rem;
+}
+
+.row {
+  align-items: center;
+  min-height: 2.25rem;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  transition: background-color 0.15s ease;
+}
+
+.clickable-row {
+  cursor: pointer;
+}
+
+.clickable-row:hover {
+  background-color: #F8FAFC;
+}
+
+.clickable-row.selected {
+  background-color: var(--carolina-blue-light);
+  outline: 1px solid var(--carolina-blue);
+}
+
+.label,
+.value {
+  font-size: 0.95rem;
+}
+
+.label {
+  color: #1A1A1A;
+  font-weight: 500;
+}
+
+.scale {
+  position: relative;
+  height: 1.4rem;
+  margin-right: 5rem;
+}
+
+.bar {
+  display: block;
+  height: 100%;
+  background: #D5D5D5;
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.bar.highlight {
+  background: var(--navy);
+}
+
+.bar.highlight-coral {
+  background: var(--accent-red);
+}
+
+.value {
+  position: absolute;
+  top: 50%;
+  transform: translate(0.5rem, -50%);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+.x-axis {
+  position: relative;
+  height: 2.7rem;
+  margin-top: 0.35rem;
+  margin-right: 5rem;
+  border-top: 1px solid #1A1A1A;
+}
+
+.tick {
+  position: absolute;
+  top: 0.45rem;
+  transform: translateX(-50%);
+  color: #4F4F4F;
+  font-size: 0.8rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.tick::before {
+  content: "";
+  position: absolute;
+  top: -0.45rem;
+  left: 50%;
+  width: 1px;
+  height: 0.35rem;
+  background: #1A1A1A;
+}
+
+.x-axis-label {
+  position: absolute;
+  top: 1.55rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+figcaption,
+.source {
+  margin-top: 1.15rem;
+  color: #5E5E5E;
+  font-size: 0.82rem;
+  max-width: 52rem;
+  line-height: 1.5;
+}
+
+.panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2.5rem;
+  margin-top: 1.5rem;
+}
+
+.panels .chart {
+  margin-bottom: 0.5rem;
+}
+
+.panels .axis-head,
+.panels .row,
+.panels .x-axis-row {
+  grid-template-columns: 8rem minmax(0, 1fr);
+}
+
+.panels .scale,
+.panels .x-axis {
+  margin-right: 2.5rem;
+}
+
+.source.shared {
+  margin-top: 0.5rem;
+}
+
+.checklist-detail-box {
+  background: #F8FAFC;
+  border-left: 4px solid var(--navy);
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 1.25rem 0 2rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* ----------------- Andrew's Grid, Cards, Simulator & Quiz ----------------- */
 .dashboard-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -316,9 +527,6 @@
   border-color: var(--carolina-blue);
 }
 
-/* -------------------------------------------------------------
-   Platform Detail Inspector (Side Panel / Card)
-------------------------------------------------------------- */
 .inspector-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -416,9 +624,7 @@
   line-height: 1.5;
 }
 
-/* -------------------------------------------------------------
-   Interactive Simulator (Wallet / ROI)
-------------------------------------------------------------- */
+/* ----------------- Simulator Styles ----------------- */
 .simulator-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -494,9 +700,7 @@
   gap: 0.5rem;
 }
 
-/* -------------------------------------------------------------
-   Interactive Persona Matcher (Quiz)
-------------------------------------------------------------- */
+/* ----------------- Quiz Styles ----------------- */
 .quiz-container {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
@@ -603,9 +807,7 @@
   margin-bottom: 1.5rem;
 }
 
-/* -------------------------------------------------------------
-   Footer
-------------------------------------------------------------- */
+/* ----------------- Footer ----------------- */
 .footer {
   margin-top: auto;
   border-top: 1px solid var(--border);
@@ -614,4 +816,32 @@
   text-align: center;
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+
+@media (max-width: 800px) {
+  .panels {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+  .axis-head,
+  .row,
+  .x-axis-row,
+  .panels .axis-head,
+  .panels .row,
+  .panels .x-axis-row {
+    grid-template-columns: 1fr;
+    row-gap: 0.25rem;
+  }
+  .row {
+    margin-bottom: 0.75rem;
+  }
+  .axis-spacer {
+    display: none;
+  }
+  .scale,
+  .x-axis,
+  .panels .scale,
+  .panels .x-axis {
+    margin-right: 4rem;
+  }
 }

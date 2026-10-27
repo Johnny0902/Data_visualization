@@ -12,7 +12,9 @@ import matplotlib.pyplot as plt
 from matplotlib.transforms import blended_transform_factory
 
 ROOT = Path(__file__).resolve().parent
-DATA = ROOT / "as-labels-data150-F26-data-viz-challenge-data.csv"
+DATA = ROOT / "data" / "as-labels-data150-F26-data-viz-challenge-data.csv"
+if not DATA.exists():
+    DATA = ROOT / "as-labels-data150-F26-data-viz-challenge-data.csv"
 OUT = ROOT / "figures"
 
 PAY = "Self/family-funded version"
