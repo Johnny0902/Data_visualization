@@ -55,3 +55,4 @@ export const paidHighlight = new Set(["Claude", "ChatGPT"]);
 export const uncHighlight = new Set(["UNC Copilot", "PromptLab", "Copilot"]);
 
 export { surveyData };
+

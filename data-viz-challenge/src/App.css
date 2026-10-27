@@ -845,3 +845,32 @@ figcaption,
     margin-right: 4rem;
   }
 }
+
+@media (max-width: 800px) {
+  .panels {
+    grid-template-columns: 1fr;
+    row-gap: 2rem;
+  }
+  .axis-head,
+  .row,
+  .x-axis-row,
+  .panels .axis-head,
+  .panels .row,
+  .panels .x-axis-row {
+    grid-template-columns: 1fr;
+    row-gap: 0.25rem;
+  }
+  .row {
+    margin-bottom: 0.75rem;
+  }
+  .axis-spacer {
+    display: none;
+  }
+  .scale,
+  .x-axis,
+  .panels .scale,
+  .panels .x-axis {
+    margin-right: 4rem;
+  }
+}
+
